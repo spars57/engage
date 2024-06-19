@@ -26,6 +26,15 @@ const StyledCloseIcon = styled(Close)(({ theme }) => ({
   },
 }));
 
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  transition: "color 0.5s",
+  paddingTop: 10,
+  "&:hover": {
+    color: theme.palette.primary.main,
+    cursor: "pointer",
+  },
+}));
+
 const Header: FC = () => {
   const [mobile, setMobile] = useState(isMobile());
   const [open, setOpen] = useState(false);
@@ -66,22 +75,22 @@ const Header: FC = () => {
                 </IconButton>
               </Typography>
             </Box>
+            <StyledTypography color="secondary" mx={2}>
+              Home
+            </StyledTypography>
+            <StyledTypography color="secondary" mx={2}>
+              Sobre
+            </StyledTypography>
+            <StyledTypography color="secondary" mx={2}>
+              Serviços
+            </StyledTypography>
+            <StyledTypography color="secondary" mx={2}>
+              Portfolio
+            </StyledTypography>
+            <StyledTypography color="secondary" mx={2}>
+              Contactos
+            </StyledTypography>
           </Container>
-          <Typography color="secondary" mx={2}>
-            Home
-          </Typography>
-          <Typography color="secondary" mx={2}>
-            Sobre
-          </Typography>
-          <Typography color="secondary" mx={2}>
-            Serviços
-          </Typography>
-          <Typography color="secondary" mx={2}>
-            Portfolio
-          </Typography>
-          <Typography color="secondary" mx={2}>
-            Contactos
-          </Typography>
         </Box>
       </Drawer>
       <Container maxWidth={"lg"}>

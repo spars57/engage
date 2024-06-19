@@ -28,7 +28,6 @@ const StyledCloseIcon = styled(Close)(({ theme }) => ({
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   transition: "color 0.5s",
-  paddingTop: 10,
   "&:hover": {
     color: theme.palette.primary.main,
     cursor: "pointer",
@@ -75,19 +74,19 @@ const Header: FC = () => {
                 </IconButton>
               </Typography>
             </Box>
-            <StyledTypography color="secondary" mx={2}>
+            <StyledTypography color="secondary" py={2} mx={2}>
               Home
             </StyledTypography>
-            <StyledTypography color="secondary" mx={2}>
+            <StyledTypography color="secondary" py={2} mx={2}>
               Sobre
             </StyledTypography>
-            <StyledTypography color="secondary" mx={2}>
+            <StyledTypography color="secondary" py={2} mx={2}>
               Serviços
             </StyledTypography>
-            <StyledTypography color="secondary" mx={2}>
+            <StyledTypography color="secondary" py={2} mx={2}>
               Portfolio
             </StyledTypography>
-            <StyledTypography color="secondary" mx={2}>
+            <StyledTypography color="secondary" py={2} mx={2}>
               Contactos
             </StyledTypography>
           </Container>
@@ -106,21 +105,21 @@ const Header: FC = () => {
             display={mobile ? "none" : "flex"}
             alignItems="center"
           >
-            <Typography color="secondary" mx={2}>
+            <StyledTypography fontSize={18} color="secondary" mx={2}>
               Home
-            </Typography>
-            <Typography color="secondary" mx={2}>
+            </StyledTypography>
+            <StyledTypography fontSize={18} color="secondary" mx={2}>
               Sobre
-            </Typography>
-            <Typography color="secondary" mx={2}>
+            </StyledTypography>
+            <StyledTypography fontSize={18} color="secondary" mx={2}>
               Serviços
-            </Typography>
-            <Typography color="secondary" mx={2}>
+            </StyledTypography>
+            <StyledTypography fontSize={18} color="secondary" mx={2}>
               Portfolio
-            </Typography>
-            <Typography color="secondary" mx={2}>
+            </StyledTypography>
+            <StyledTypography fontSize={18} color="secondary" mx={2}>
               Contactos
-            </Typography>
+            </StyledTypography>
           </Box>
           <Box hidden={!mobile}>
             <Typography color="secondary" mx={2}>

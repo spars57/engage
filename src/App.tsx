@@ -1,4 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import Banner from "./components/banner";
 import Header from "./components/header";
 import { Theme } from "./styles/theme";
 
@@ -8,6 +9,7 @@ function App() {
       <CssBaseline>
         <Header />
       </CssBaseline>
+      <Banner />
     </ThemeProvider>
   );
 }

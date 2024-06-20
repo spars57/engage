@@ -7,9 +7,9 @@ const Services = () => {
   const [isMobile, setIsMobile] = useState(isMobileFunction());
 
   useEffect(() => {
-    const handleScroll = () => setIsMobile(isMobileFunction());
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handler = () => setIsMobile(isMobileFunction());
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
   }, []);
 
   return (

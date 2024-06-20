@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { RoutePath } from "./config/routes";
+import About from "./modules/about";
 import Home from "./modules/home";
 import { Theme } from "./styles/theme";
 
@@ -15,6 +16,7 @@ function App() {
         </CssBaseline>
         <Routes>
           <Route path={RoutePath.Home} element={<Home />} />
+          <Route path={RoutePath.About} element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>

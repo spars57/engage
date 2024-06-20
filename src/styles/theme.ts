@@ -19,7 +19,7 @@ export const Theme = createTheme({
   },
   typography: {
     allVariants: {
-      letterSpacing: 1.4,
+      letterSpacing: 1,
       fontFamily: "signika-medium",
     },
     h6: {

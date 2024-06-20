@@ -30,7 +30,7 @@ const Banner: FC = () => {
       <Grid container>
         <Grid item xs={12} md={7}>
           <Box>
-            <Slide in={true} direction="down" timeout={1000}>
+            <Slide in={true} direction="down" timeout={500}>
               <Typography
                 color="secondary"
                 variant={isMobile ? "h4" : "h2"}
@@ -39,7 +39,7 @@ const Banner: FC = () => {
                 Encontre
               </Typography>
             </Slide>
-            <Slide in={true} direction="left" timeout={1000}>
+            <Slide in={true} direction="left" timeout={500}>
               <GradientTypography
                 variant={isMobile ? "h4" : "h2"}
                 textAlign={isMobile ? "center" : "left"}
@@ -48,7 +48,7 @@ const Banner: FC = () => {
                 profissionais talentosos
               </GradientTypography>
             </Slide>
-            <Slide in={true} direction="right" timeout={1000}>
+            <Slide in={true} direction="right" timeout={500}>
               <Typography
                 variant={isMobile ? "h4" : "h2"}
                 color="secondary"
@@ -57,7 +57,7 @@ const Banner: FC = () => {
                 para a sua empresa
               </Typography>
             </Slide>
-            <Slide in={true} timeout={1000}>
+            <Slide direction="up" in={true} timeout={500}>
               <Box mt={3} width={isMobile ? "100%" : "75%"}>
                 <Typography
                   variant="body1"
@@ -75,7 +75,7 @@ const Banner: FC = () => {
                 </Typography>
               </Box>
             </Slide>
-            <Fade in={true} timeout={1000}>
+            <Fade in={true} timeout={500}>
               <Box
                 display="flex"
                 justifyContent={isMobile ? "center" : "left"}
@@ -92,9 +92,11 @@ const Banner: FC = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={5}>
-          <Box py={isMobile ? 6 : 0} display="flex" justifyContent={"center"}>
-            <img width={"100%"} src={svg} />
-          </Box>
+          <Slide in={true} direction="left">
+            <Box py={isMobile ? 6 : 0} display="flex" justifyContent={"center"}>
+              <img width={"100%"} src={svg} />
+            </Box>
+          </Slide>
         </Grid>
       </Grid>
     </Box>

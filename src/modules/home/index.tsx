@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Banner />
       <Companies />
-      <Services triggeringPoint={isMobile() ? 800 : 1070} />
+      <Services triggeringPoint={isMobile() ? 800 : 1100} />
     </>
   );
 };

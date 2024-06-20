@@ -1,5 +1,5 @@
 import { Facebook, Instagram, LinkedIn, X, YouTube } from "@mui/icons-material";
-import { Box, IconButton, styled, useTheme } from "@mui/material";
+import { Box, IconButton, styled } from "@mui/material";
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
   transition: "border 0.5s, background-color 0.5s",
@@ -11,7 +11,6 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
 }));
 
 const SocialMediaFooterComponent = () => {
-  const theme = useTheme();
   return (
     <Box display="flex">
       <Box mx={1}>

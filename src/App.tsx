@@ -1,21 +1,23 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Banner from "./components/banner";
-import Companies from "./components/companies";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import Services from "./components/services/social-media-management";
+import { RoutePath } from "./config/routes";
+import Home from "./modules/home";
 import { Theme } from "./styles/theme";
 
 function App() {
   return (
     <ThemeProvider theme={Theme}>
-      <CssBaseline>
-        <Header />
-      </CssBaseline>
-      <Banner />
-      <Companies />
-      <Services />
-      <Footer />
+      <BrowserRouter>
+        <CssBaseline>
+          <Header />
+        </CssBaseline>
+        <Routes>
+          <Route path={RoutePath.Home} element={<Home />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

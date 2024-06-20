@@ -13,7 +13,7 @@ const Services = () => {
   }, []);
 
   return (
-    <Box bgcolor={"black"} pb={20}>
+    <Box id="services" bgcolor={"black"} pb={20}>
       <Container maxWidth="lg">
         <Grid container rowGap={10}>
           <Grid item xs={12}>
@@ -59,7 +59,7 @@ const Services = () => {
                 textAlign={isMobile ? "center" : "left"}
                 variant={isMobile ? "h4" : "h4"}
               >
-                Gestão e Agênciamento
+                Agênciamento
               </Typography>
               {isMobile ? <></> : <>&nbsp;</>}
               <GradientTypography

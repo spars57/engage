@@ -1,10 +1,11 @@
-import { Box, Grid, Slide, Typography, useTheme } from "@mui/material";
+import { Box, Fade, Grid, Slide, Typography, useTheme } from "@mui/material";
 import { FC, useEffect, useState } from "react";
 import { GradientButton } from "../gradient-button";
 import { GradientTypography } from "../gradient-typography";
 
 import svg from "../../assets/ilustration1.svg";
 import { isMobile as isMobileFunction } from "../../utils/is-mobile";
+import { smoothScrollTo } from "../../utils/scroll-to-element";
 
 const Banner: FC = () => {
   const theme = useTheme();
@@ -12,8 +13,8 @@ const Banner: FC = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsMobile(isMobileFunction());
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => window.removeEventListener("resize", handleScroll);
   }, []);
 
   return (
@@ -23,12 +24,12 @@ const Banner: FC = () => {
         backgroundImage: `linear-gradient(to bottom,${theme.palette.common.black},${theme.palette.grey[900]})`,
       }}
       pt={25}
-      px={10}
+      px={isMobile ? 3 : 10}
     >
       <Grid container>
         <Grid item xs={12} md={7}>
           <Box>
-            <Slide in={true} direction="right">
+            <Slide in={true} direction="down" timeout={1000}>
               <Typography
                 color="secondary"
                 variant={isMobile ? "h4" : "h2"}
@@ -37,7 +38,7 @@ const Banner: FC = () => {
                 Encontre
               </Typography>
             </Slide>
-            <Slide in={true} direction="left">
+            <Slide in={true} direction="left" timeout={1000}>
               <GradientTypography
                 variant={isMobile ? "h4" : "h2"}
                 textAlign={isMobile ? "center" : "left"}
@@ -46,36 +47,47 @@ const Banner: FC = () => {
                 profissionais talentosos
               </GradientTypography>
             </Slide>
-            <Typography
-              variant={isMobile ? "h4" : "h2"}
-              color="secondary"
-              textAlign={isMobile ? "center" : "left"}
-            >
-              para a sua empresa
-            </Typography>
-            <Box mt={3} width={isMobile ? "100%" : "75%"}>
+            <Slide in={true} direction="right" timeout={1000}>
               <Typography
-                variant="body1"
+                variant={isMobile ? "h4" : "h2"}
                 color="secondary"
                 textAlign={isMobile ? "center" : "left"}
               >
-                A Engage é uma agência de marketing digital especializada em
-                redes sociais, trabalhamos com diversos profissionais em áreas
-                de desenvolvimento, marketing, publicidade e criação de
-                contéudo.
-                <p></p>
-                Ao escolher o nosso serviço terá acesso a uma vasta gama de
-                profissionais talentosos que irão impulsionar os resultados da
-                sua empresa para o próximo nível.
+                para a sua empresa
               </Typography>
-            </Box>
-            <Box
-              display="flex"
-              justifyContent={isMobile ? "center" : "left"}
-              py={3}
-            >
-              <GradientButton variant="contained">Saiba mais</GradientButton>
-            </Box>
+            </Slide>
+            <Slide in={true} timeout={1000}>
+              <Box mt={3} width={isMobile ? "100%" : "75%"}>
+                <Typography
+                  variant="body1"
+                  color="secondary"
+                  textAlign={isMobile ? "center" : "left"}
+                >
+                  A Engage é uma agência de marketing digital especializada em
+                  redes sociais, trabalhamos com diversos profissionais em áreas
+                  de desenvolvimento, marketing, publicidade e criação de
+                  contéudo.
+                  <p></p>
+                  Ao escolher o nosso serviço terá acesso a uma vasta gama de
+                  profissionais talentosos que irão impulsionar os resultados da
+                  sua empresa para o próximo nível.
+                </Typography>
+              </Box>
+            </Slide>
+            <Fade in={true} timeout={1000}>
+              <Box
+                display="flex"
+                justifyContent={isMobile ? "center" : "left"}
+                py={3}
+              >
+                <GradientButton
+                  onClick={() => smoothScrollTo("services")}
+                  variant="contained"
+                >
+                  Saiba mais
+                </GradientButton>
+              </Box>
+            </Fade>
           </Box>
         </Grid>
         <Grid item xs={12} md={5}>

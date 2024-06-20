@@ -8,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { RoutePath } from "../../config/routes";
 import { isMobile } from "../../utils/is-mobile";
 import { Logo } from "../logo";
 import { HeaderAppBar } from "./styles";
@@ -39,6 +41,8 @@ const Header: FC = () => {
   const [opacityTrigger, setOpacityTrigger] = useState(window.scrollY > 577);
   const [open, setOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
 
@@ -55,7 +59,7 @@ const Header: FC = () => {
   }, []);
 
   return (
-    <HeaderAppBar triggerOpacity={opacityTrigger}>
+    <HeaderAppBar id="header" triggerOpacity={opacityTrigger}>
       <Drawer open={open} onClose={onClose}>
         <Box
           flexGrow={1}
@@ -78,19 +82,59 @@ const Header: FC = () => {
                 </IconButton>
               </Typography>
             </Box>
-            <StyledTypography color="secondary" py={2} mx={2}>
+            <StyledTypography
+              onClick={() => {
+                onClose();
+                navigate(RoutePath.Home);
+              }}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
               Home
             </StyledTypography>
-            <StyledTypography color="secondary" py={2} mx={2}>
+            <StyledTypography
+              onClick={() => {
+                onClose();
+                navigate(RoutePath.About);
+              }}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
               Sobre
             </StyledTypography>
-            <StyledTypography color="secondary" py={2} mx={2}>
+            <StyledTypography
+              onClick={() => {
+                onClose();
+                navigate(RoutePath.Services);
+              }}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
               Serviços
             </StyledTypography>
-            <StyledTypography color="secondary" py={2} mx={2}>
+            <StyledTypography
+              onClick={() => {
+                onClose();
+                navigate(RoutePath.Portfolio);
+              }}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
               Portfolio
             </StyledTypography>
-            <StyledTypography color="secondary" py={2} mx={2}>
+            <StyledTypography
+              onClick={() => {
+                onClose();
+                navigate(RoutePath.Contact);
+              }}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
               Contactos
             </StyledTypography>
           </Container>
@@ -109,19 +153,44 @@ const Header: FC = () => {
             display={mobile ? "none" : "flex"}
             alignItems="center"
           >
-            <StyledTypography fontSize={18} color="secondary" mx={2}>
+            <StyledTypography
+              onClick={() => navigate(RoutePath.Home)}
+              fontSize={18}
+              color="secondary"
+              mx={2}
+            >
               Home
             </StyledTypography>
-            <StyledTypography fontSize={18} color="secondary" mx={2}>
+            <StyledTypography
+              onClick={() => navigate(RoutePath.About)}
+              fontSize={18}
+              color="secondary"
+              mx={2}
+            >
               Sobre
             </StyledTypography>
-            <StyledTypography fontSize={18} color="secondary" mx={2}>
+            <StyledTypography
+              onClick={() => navigate(RoutePath.Services)}
+              fontSize={18}
+              color="secondary"
+              mx={2}
+            >
               Serviços
             </StyledTypography>
-            <StyledTypography fontSize={18} color="secondary" mx={2}>
+            <StyledTypography
+              onClick={() => navigate(RoutePath.Portfolio)}
+              fontSize={18}
+              color="secondary"
+              mx={2}
+            >
               Portfolio
             </StyledTypography>
-            <StyledTypography fontSize={18} color="secondary" mx={2}>
+            <StyledTypography
+              onClick={() => navigate(RoutePath.Contact)}
+              fontSize={18}
+              color="secondary"
+              mx={2}
+            >
               Contactos
             </StyledTypography>
           </Box>

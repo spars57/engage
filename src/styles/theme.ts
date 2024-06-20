@@ -25,5 +25,8 @@ export const Theme = createTheme({
     h6: {
       fontWeight: "bold",
     },
+    subtitle1: {
+      fontSize: 20,
+    },
   },
 });

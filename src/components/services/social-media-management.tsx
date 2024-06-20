@@ -95,7 +95,7 @@ const Services = () => {
                 textAlign={isMobile ? "center" : "left"}
                 variant={isMobile ? "h4" : "h4"}
               >
-                Optimização de Campanhas
+                Campanhas
               </Typography>
               {isMobile ? <></> : <>&nbsp;</>}
               <GradientTypography

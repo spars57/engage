@@ -1,11 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { GradientTypography } from "../gradient-typography";
 
 export const Logo = () => {
   return (
     <Box display="flex">
-      <Typography color="secondary" variant="h6">
+      <GradientTypography color="secondary" variant="h6">
         ENGAGE LOGO
-      </Typography>
+      </GradientTypography>
     </Box>
   );
 };

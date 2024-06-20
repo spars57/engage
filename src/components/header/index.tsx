@@ -36,22 +36,26 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 
 const Header: FC = () => {
   const [mobile, setMobile] = useState(isMobile());
+  const [opacityTrigger, setOpacityTrigger] = useState(window.scrollY > 577);
   const [open, setOpen] = useState(false);
 
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
 
   useEffect(() => {
-    const handler = () => {
-      setMobile(isMobile());
-    };
-
+    const handler = () => setMobile(isMobile());
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
   }, []);
 
+  useEffect(() => {
+    const handler = () => setOpacityTrigger(window.scrollY > 577);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <HeaderAppBar>
+    <HeaderAppBar triggerOpacity={opacityTrigger}>
       <Drawer open={open} onClose={onClose}>
         <Box
           flexGrow={1}

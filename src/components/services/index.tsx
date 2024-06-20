@@ -39,7 +39,19 @@ const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
                 >
                   Gestão e Consultoria
                 </Typography>
-                {isMobile ? <></> : <>&nbsp;</>}
+                {!isMobile && (
+                  <>
+                    &nbsp;
+                    <Typography
+                      color="secondary"
+                      textAlign={isMobile ? "center" : "left"}
+                      variant={isMobile ? "h4" : "h4"}
+                    >
+                      de
+                    </Typography>
+                    &nbsp;
+                  </>
+                )}
                 <GradientTypography
                   color="secondary"
                   textAlign={isMobile ? "center" : "left"}
@@ -72,7 +84,19 @@ const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
                 >
                   Agênciamento
                 </Typography>
-                {isMobile ? <></> : <>&nbsp;</>}
+                {!isMobile && (
+                  <>
+                    &nbsp;
+                    <Typography
+                      color="secondary"
+                      textAlign={isMobile ? "center" : "left"}
+                      variant={isMobile ? "h4" : "h4"}
+                    >
+                      de
+                    </Typography>
+                    &nbsp;
+                  </>
+                )}
                 <GradientTypography
                   color="secondary"
                   textAlign={isMobile ? "center" : "left"}
@@ -106,7 +130,19 @@ const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
                 >
                   Campanhas
                 </Typography>
-                {isMobile ? <></> : <>&nbsp;</>}
+                {!isMobile && (
+                  <>
+                    &nbsp;
+                    <Typography
+                      color="secondary"
+                      textAlign={isMobile ? "center" : "left"}
+                      variant={isMobile ? "h4" : "h4"}
+                    >
+                      de
+                    </Typography>
+                    &nbsp;
+                  </>
+                )}
                 <GradientTypography
                   color="secondary"
                   textAlign={isMobile ? "center" : "left"}

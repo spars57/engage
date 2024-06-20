@@ -20,13 +20,38 @@ export const Theme = createTheme({
   typography: {
     allVariants: {
       letterSpacing: 1,
-      fontFamily: "signika-light",
+      fontFamily: "signika-medium",
     },
     h6: {
-      fontWeight: "bold",
+      fontFamily: "signika-bold",
+    },
+    h5: {
+      fontFamily: "signika-bold",
+    },
+    h4: {
+      fontFamily: "signika-bold",
+    },
+    h3: {
+      fontFamily: "signika-bold",
+    },
+    h2: {
+      fontFamily: "signika-bold",
+    },
+    h1: {
+      fontFamily: "signika-bold",
+    },
+
+    body1: {
+      fontFamily: "signika-medium",
+    },
+    body2: {
+      fontFamily: "signika-medium",
     },
     subtitle1: {
       fontSize: 20,
+    },
+    button: {
+      fontFamily: "signika-bold",
     },
   },
 });

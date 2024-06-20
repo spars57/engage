@@ -30,7 +30,7 @@ const Banner: FC = () => {
       <Grid container>
         <Grid item xs={12} md={7}>
           <Box>
-            <Slide in={true} direction="down" timeout={500}>
+            <Slide in={true} direction="down">
               <Typography
                 color="secondary"
                 variant={isMobile ? "h4" : "h2"}
@@ -39,7 +39,7 @@ const Banner: FC = () => {
                 Encontre
               </Typography>
             </Slide>
-            <Slide in={true} direction="left" timeout={500}>
+            <Slide in={true} direction="left">
               <GradientTypography
                 variant={isMobile ? "h4" : "h2"}
                 textAlign={isMobile ? "center" : "left"}
@@ -48,7 +48,7 @@ const Banner: FC = () => {
                 profissionais talentosos
               </GradientTypography>
             </Slide>
-            <Slide in={true} direction="right" timeout={500}>
+            <Slide in={true} direction="right">
               <Typography
                 variant={isMobile ? "h4" : "h2"}
                 color="secondary"
@@ -57,7 +57,7 @@ const Banner: FC = () => {
                 para a sua empresa
               </Typography>
             </Slide>
-            <Slide direction="up" in={true} timeout={500}>
+            <Slide direction="up" in={true}>
               <Box mt={3} width={isMobile ? "100%" : "75%"}>
                 <Typography
                   variant="body1"
@@ -75,7 +75,7 @@ const Banner: FC = () => {
                 </Typography>
               </Box>
             </Slide>
-            <Fade in={true} timeout={500}>
+            <Fade in={true}>
               <Box
                 display="flex"
                 justifyContent={isMobile ? "center" : "left"}

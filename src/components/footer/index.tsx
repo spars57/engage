@@ -6,7 +6,7 @@ import SocialMediaFooterComponent from "./social-media";
 const Footer: FC = () => {
   const theme = useTheme();
   return (
-    <Box display="flex" flexDirection={"column"}>
+    <Box display="flex" bgcolor="#181818" flexDirection={"column"}>
       <Container maxWidth="lg">
         <Box
           py={2}

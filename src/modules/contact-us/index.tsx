@@ -7,7 +7,6 @@ import {
   Link,
   Slide,
   Typography,
-  useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { GradientTypography } from "../../components/gradient-typography";
@@ -17,7 +16,6 @@ const BUTTON_WIDTH = 300;
 
 const ContactUs = () => {
   const [isMobile, setIsMobile] = useState(isMobileFunction());
-  const theme = useTheme();
 
   useEffect(() => {
     const handler = () => setIsMobile(isMobileFunction());

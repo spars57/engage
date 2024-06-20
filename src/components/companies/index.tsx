@@ -20,7 +20,11 @@ const Companies: FC = () => {
         backgroundImage: `linear-gradient(to top,${theme.palette.common.black},${theme.palette.grey[900]})`,
       }}
     >
-      <Box display={isMobile ? "block" : "flex"} justifyContent={"center"}>
+      <Box
+        mx={2}
+        display={isMobile ? "block" : "flex"}
+        justifyContent={"center"}
+      >
         <Typography
           textAlign={isMobile ? "center" : "left"}
           variant={isMobile ? "h4" : "h4"}
@@ -28,10 +32,10 @@ const Companies: FC = () => {
         >
           Os nosso profissionais
         </Typography>
-        &nbsp;
+        {isMobile ? "" : <>&nbsp;</>}
         <GradientTypography
           textAlign={isMobile ? "center" : "left"}
-          variant={isMobile ? "h4" : "h4"}
+          variant={isMobile ? "h6" : "h4"}
         >
           ajudam as maiores marcas do mundo
         </GradientTypography>

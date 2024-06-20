@@ -26,7 +26,7 @@ const Banner: FC = () => {
       px={10}
     >
       <Grid container>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={7}>
           <Box>
             <Slide in={true} direction="right">
               <Typography
@@ -78,7 +78,7 @@ const Banner: FC = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={5}>
           <Box py={isMobile ? 6 : 0} display="flex" justifyContent={"center"}>
             <img width={"100%"} src={svg} />
           </Box>

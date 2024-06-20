@@ -23,7 +23,6 @@ const Banner: FC = () => {
         backgroundImage: `linear-gradient(to bottom,${theme.palette.common.black},${theme.palette.grey[900]})`,
       }}
       pt={25}
-      pb={15}
       px={10}
     >
       <Grid container>

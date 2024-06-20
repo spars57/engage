@@ -11,6 +11,7 @@ import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../config/routes";
 import { isMobile } from "../../utils/is-mobile";
+import { smoothScrollTo } from "../../utils/scroll-to-element";
 import { Logo } from "../logo";
 import { HeaderAppBar } from "./styles";
 
@@ -86,6 +87,7 @@ const Header: FC = () => {
               onClick={() => {
                 onClose();
                 navigate(RoutePath.Home);
+                smoothScrollTo("banner");
               }}
               color="secondary"
               py={2}
@@ -107,7 +109,7 @@ const Header: FC = () => {
             <StyledTypography
               onClick={() => {
                 onClose();
-                navigate(RoutePath.Services);
+                smoothScrollTo("services");
               }}
               color="secondary"
               py={2}
@@ -170,7 +172,7 @@ const Header: FC = () => {
               Sobre
             </StyledTypography>
             <StyledTypography
-              onClick={() => navigate(RoutePath.Services)}
+              onClick={() => smoothScrollTo("services")}
               fontSize={18}
               color="secondary"
               mx={2}

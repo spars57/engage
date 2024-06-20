@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <Box display="flex">
       <GradientTypography
-        onClick={() => smoothScrollTo("header")}
+        onClick={() => smoothScrollTo("banner")}
         color="secondary"
         variant="h6"
       >

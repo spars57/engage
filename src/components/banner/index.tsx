@@ -19,6 +19,7 @@ const Banner: FC = () => {
 
   return (
     <Box
+      id="banner"
       display="flex"
       sx={{
         backgroundImage: `linear-gradient(to bottom,${theme.palette.common.black},${theme.palette.grey[900]})`,

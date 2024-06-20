@@ -82,7 +82,12 @@ const Banner: FC = () => {
                 py={3}
               >
                 <GradientButton
-                  onClick={() => smoothScrollTo("services")}
+                  onClick={() =>
+                    smoothScrollTo("services", {
+                      inline: "start",
+                      block: "start",
+                    })
+                  }
                   variant="contained"
                 >
                   Saiba mais

@@ -12,7 +12,6 @@ import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../config/routes";
 import { isMobile } from "../../utils/is-mobile";
-import { smoothScrollTo } from "../../utils/scroll-to-element";
 import { Logo } from "../logo";
 import { HeaderAppBar } from "./styles";
 
@@ -60,6 +59,12 @@ const Header: FC = () => {
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
 
+  const onRouteClick = (route: RoutePath) => () => {
+    onClose();
+    navigate(route);
+    window.scrollTo({ top: 0 });
+  };
+
   useEffect(() => {
     const handler = () => setMobile(isMobile());
     window.addEventListener("resize", handler);
@@ -98,11 +103,7 @@ const Header: FC = () => {
             </Box>
             <StyledTypography
               route={RoutePath.Home}
-              onClick={() => {
-                onClose();
-                navigate(RoutePath.Home);
-                smoothScrollTo("banner");
-              }}
+              onClick={onRouteClick(RoutePath.Home)}
               color="secondary"
               py={2}
               mx={2}
@@ -111,10 +112,7 @@ const Header: FC = () => {
             </StyledTypography>
             <StyledTypography
               route={RoutePath.About}
-              onClick={() => {
-                onClose();
-                navigate(RoutePath.About);
-              }}
+              onClick={onRouteClick(RoutePath.About)}
               color={
                 window.location.href.includes(RoutePath.About)
                   ? "primary"
@@ -127,10 +125,7 @@ const Header: FC = () => {
             </StyledTypography>
             <StyledTypography
               route={RoutePath.Services}
-              onClick={() => {
-                onClose();
-                navigate(RoutePath.Services);
-              }}
+              onClick={onRouteClick(RoutePath.Services)}
               color="secondary"
               py={2}
               mx={2}
@@ -140,10 +135,7 @@ const Header: FC = () => {
 
             <StyledTypography
               route={RoutePath.Contact}
-              onClick={() => {
-                onClose();
-                navigate(RoutePath.Contact);
-              }}
+              onClick={onRouteClick(RoutePath.Contact)}
               color="secondary"
               py={2}
               mx={2}
@@ -168,10 +160,7 @@ const Header: FC = () => {
           >
             <StyledTypography
               route={RoutePath.Home}
-              onClick={() => {
-                navigate(RoutePath.Home);
-                smoothScrollTo("banner");
-              }}
+              onClick={onRouteClick(RoutePath.Home)}
               fontSize={18}
               color="secondary"
               mx={2}
@@ -180,7 +169,7 @@ const Header: FC = () => {
             </StyledTypography>
             <StyledTypography
               route={RoutePath.About}
-              onClick={() => navigate(RoutePath.About)}
+              onClick={onRouteClick(RoutePath.About)}
               fontSize={18}
               color="secondary"
               mx={2}
@@ -189,7 +178,7 @@ const Header: FC = () => {
             </StyledTypography>
             <StyledTypography
               route={RoutePath.Services}
-              onClick={() => navigate(RoutePath.Services)}
+              onClick={onRouteClick(RoutePath.Services)}
               fontSize={18}
               color="secondary"
               mx={2}
@@ -206,7 +195,7 @@ const Header: FC = () => {
             </StyledTypography> */}
             <StyledTypography
               route={RoutePath.Contact}
-              onClick={() => navigate(RoutePath.Contact)}
+              onClick={onRouteClick(RoutePath.Contact)}
               fontSize={18}
               color="secondary"
               mx={2}

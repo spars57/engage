@@ -26,7 +26,7 @@ const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
   }, []);
 
   return (
-    <Box id="services" bgcolor={"black"} pb={20}>
+    <Box sx={{ scrollMargin: 100 }} id="services" bgcolor={"black"} pb={20}>
       <Slide direction="up" in={trigger}>
         <Container maxWidth="lg">
           <Grid container rowGap={10}>

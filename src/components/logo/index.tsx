@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/engage_short_logo.png";
+import { RoutePath } from "../../config/routes";
 import { isMobile } from "../../utils/is-mobile";
-import { smoothScrollTo } from "../../utils/scroll-to-element";
 
 export const Logo: FC<{ width?: number }> = ({
-  width = isMobile() ? 130 : 200,
+  width = isMobile() ? 140 : 200,
 }) => {
+  const navigate = useNavigate();
   return (
     <Box display="flex">
       {/* <Typography
@@ -19,7 +21,15 @@ export const Logo: FC<{ width?: number }> = ({
       <img
         width={width}
         style={{ filter: "invert(1)" }}
-        onClick={() => smoothScrollTo("banner")}
+        onClick={() => {
+          if (window.location.pathname !== RoutePath.Home) {
+            navigate(RoutePath.Home);
+            window.scrollTo({ top: 0 });
+          }
+          document
+            .getElementById("banner")
+            ?.scrollIntoView({ behavior: "smooth", inline: "start" });
+        }}
         src={logo}
       />
     </Box>

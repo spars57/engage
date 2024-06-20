@@ -1,4 +1,13 @@
-export const smoothScrollTo = (id: string) =>
-  document
-    .getElementById(id)
-    ?.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+export const smoothScrollTo = (
+  id: string,
+  options?: ScrollIntoViewOptions,
+  callback?: () => void
+) => {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "start",
+    ...options,
+  });
+  if (callback) callback();
+};

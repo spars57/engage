@@ -41,15 +41,12 @@ const Services = () => {
               color="secondary"
               textAlign={isMobile ? "center" : "left"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              feugiat, nulla in sagittis tristique, justo ante porta erat, ac
-              tincidunt magna ante eget turpis. Etiam lacus dui, vulputate nec
-              tellus ac, aliquam varius tellus. Nam sollicitudin gravida ex, non
-              dictum purus vulputate sed. Cras fermentum mauris eu lacinia
-              vestibulum.
-              <p></p>
-              Vestibulum consequat dolor quis facilisis varius. Vivamus
-              condimentum ac quam eget facilisis.
+              A gestão e consultoria de redes sociais é um serviço essencial
+              para empresas e indivíduos que desejam otimizar a sua presença
+              digital e alcançar os seus objetivos de marketing através das
+              plataformas sociais. Este serviço abrange uma ampla gama de
+              atividades que ajudam a construir, gerir e melhorar o desempenho
+              das redes sociais.
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -77,15 +74,13 @@ const Services = () => {
               color="secondary"
               textAlign={isMobile ? "center" : "left"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              feugiat, nulla in sagittis tristique, justo ante porta erat, ac
-              tincidunt magna ante eget turpis. Etiam lacus dui, vulputate nec
-              tellus ac, aliquam varius tellus. Nam sollicitudin gravida ex, non
-              dictum purus vulputate sed. Cras fermentum mauris eu lacinia
-              vestibulum.
-              <p></p>
-              Vestibulum consequat dolor quis facilisis varius. Vivamus
-              condimentum ac quam eget facilisis.
+              O agenciamento de influencers é um serviço especializado que visa
+              gerir e representar influenciadores digitais, ajudando-os a
+              maximizar o seu potencial e a obter oportunidades de colaboração
+              com marcas e empresas. Este serviço envolve uma série de
+              atividades que facilitam a carreira dos influenciadores,
+              permitindo-lhes focar-se na criação de conteúdo e no envolvimento
+              com o seu público.
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -113,15 +108,21 @@ const Services = () => {
               color="secondary"
               textAlign={isMobile ? "center" : "left"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              feugiat, nulla in sagittis tristique, justo ante porta erat, ac
-              tincidunt magna ante eget turpis. Etiam lacus dui, vulputate nec
-              tellus ac, aliquam varius tellus. Nam sollicitudin gravida ex, non
-              dictum purus vulputate sed. Cras fermentum mauris eu lacinia
-              vestibulum.
+              As campanhas de marketing de influência são uma estratégia de
+              marketing que envolve a colaboração com influenciadores para
+              promover produtos, serviços ou marcas. Os influenciadores são
+              indivíduos que possuem uma base de seguidores significativa e
+              engajada nas redes sociais, blogs ou outras plataformas digitais,
+              e que têm a capacidade de influenciar as opiniões e comportamentos
+              do seu público.
               <p></p>
-              Vestibulum consequat dolor quis facilisis varius. Vivamus
-              condimentum ac quam eget facilisis.
+              Estas campanhas funcionam ao tirar partido da credibilidade e do
+              alcance dos influenciadores para transmitir a mensagem da marca de
+              forma autêntica e convincente. Em vez de utilizar métodos
+              tradicionais de publicidade, que muitas vezes são percebidos como
+              impessoais ou intrusivos, o marketing de influência utiliza a voz
+              e a experiência dos influenciadores para criar uma conexão mais
+              genuína com os consumidores.
             </Typography>
           </Grid>
         </Grid>

@@ -39,7 +39,7 @@ const About = () => {
                   por Beatriz Albergaria, licenciada em Enfermagem pelo Escola
                   Superior de Enfermagem de Calouste Gulbenkian de Lisboa e com
                   um vasto background na criação de conteúdo e gestão de redes
-                  sociais, contan com mais de 25 mil seguidores espalhados por
+                  sociais, contando com mais de 25 mil seguidores espalhados por
                   diversas plataformas digitais.
                   <p></p>
                   Numa era em que existem diversas redes sociais, manter todos

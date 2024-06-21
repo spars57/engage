@@ -65,9 +65,9 @@ const Banner: FC = () => {
                   textAlign={isMobile ? "center" : "left"}
                 >
                   A Engage é uma agência de marketing digital especializada em
-                  redes sociais, trabalhamos com diversos profissionais em áreas
-                  de desenvolvimento, marketing, publicidade e criação de
-                  contéudo.
+                  redes sociais, que conta com diversos profissionais de áreas
+                  como Marketing e Publicidade, Gestão, Design e Produção de
+                  Contéudos Digitais.
                   <p></p>
                   Ao escolher o nosso serviço terá acesso a uma vasta gama de
                   profissionais talentosos que irão impulsionar os resultados da

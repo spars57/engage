@@ -10,7 +10,7 @@ export const Logo: FC<{ width?: number }> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <Box display="flex">
+    <Box display="flex" sx={{ cursor: "pointer" }}>
       {/* <Typography
         onClick={() => smoothScrollTo("banner")}
         color="secondary"

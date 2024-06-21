@@ -35,17 +35,29 @@ const SocialMediaFooterComponent = () => {
         </StyledIconButton>
       </Box>
       <Box mx={1}>
-        <StyledIconButton>
+        <StyledIconButton
+          onClick={() =>
+            openUrlInNewTab("https://www.instagram.com/engageagency.pt/")
+          }
+        >
           <Facebook fontSize="small" color="secondary" />
         </StyledIconButton>
       </Box>
       <Box mx={1}>
-        <StyledIconButton>
+        <StyledIconButton
+          onClick={() =>
+            openUrlInNewTab("https://www.instagram.com/engageagency.pt/")
+          }
+        >
           <YouTube fontSize="small" color="secondary" />
         </StyledIconButton>
       </Box>
       <Box mx={1}>
-        <StyledIconButton>
+        <StyledIconButton
+          onClick={() =>
+            openUrlInNewTab("https://www.instagram.com/engageagency.pt/")
+          }
+        >
           <X fontSize="small" color="secondary" />
         </StyledIconButton>
       </Box>

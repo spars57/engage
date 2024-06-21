@@ -6,6 +6,7 @@ import { RoutePath } from "./config/routes";
 import About from "./modules/about";
 import ContactUs from "./modules/contact-us";
 import Home from "./modules/home";
+import NotAvailable from "./modules/not-available";
 import Service from "./modules/services";
 import { Theme } from "./styles/theme";
 
@@ -21,6 +22,8 @@ function App() {
           <Route path={RoutePath.Services} element={<Service />} />
           <Route path={RoutePath.About} element={<About />} />
           <Route path={RoutePath.Contact} element={<ContactUs />} />
+          <Route path={RoutePath.Policy} element={<NotAvailable />} />
+          <Route path={RoutePath.Terms} element={<NotAvailable />} />
         </Routes>
         <Footer />
       </BrowserRouter>

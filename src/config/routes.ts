@@ -4,4 +4,6 @@ export enum RoutePath {
   Services = "/services",
   Contact = "/contact",
   Portfolio = "/portfolio",
+  Terms = "/terms",
+  Policy = "/policy",
 }

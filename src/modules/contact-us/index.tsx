@@ -1,14 +1,7 @@
 import { Email } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Link,
-  Slide,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Link, Slide, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { GradientButton } from "../../components/gradient-button";
 import { GradientTypography } from "../../components/gradient-typography";
 import { isMobile as isMobileFunction } from "../../utils/is-mobile";
 
@@ -58,7 +51,7 @@ const ContactUs = () => {
                   justifyContent={"center"}
                 >
                   <Box p={1} display="flex" justifyContent={"center"}>
-                    <Button
+                    <GradientButton
                       sx={{
                         width: BUTTON_WIDTH,
                       }}
@@ -72,7 +65,7 @@ const ContactUs = () => {
                       >
                         geral@engageagency.pt
                       </Link>
-                    </Button>
+                    </GradientButton>
                   </Box>
                 </Box>
               </Slide>

@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Slide, Typography } from "@mui/material";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { isMobile as isMobileFunction } from "../../utils/is-mobile";
 import { GradientTypography } from "../gradient-typography";
 
@@ -17,16 +17,34 @@ const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
     return () => window.removeEventListener("resize", handler);
   }, []);
 
+  const elementRef = useRef(null);
+
   useEffect(() => {
-    const handler = () => {
-      if (window.scrollY > triggeringPoint) setTrigger(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setTrigger(true);
+      },
+      {
+        root: null, // use the viewport as the container
+        rootMargin: "0px",
+        threshold: 0.1, // Adjust this threshold according to your needs
+      }
+    );
+
+    if (elementRef.current) observer.observe(elementRef.current);
+    return () => {
+      if (elementRef.current) observer.unobserve(elementRef.current);
     };
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+  }, [elementRef]);
 
   return (
-    <Box sx={{ scrollMargin: 100 }} id="services" bgcolor={"black"} pb={20}>
+    <Box
+      ref={elementRef}
+      sx={{ scrollMargin: 100 }}
+      id="services"
+      bgcolor={"black"}
+      pb={20}
+    >
       <Slide direction="up" in={trigger}>
         <Container maxWidth="lg">
           <Grid container rowGap={10}>

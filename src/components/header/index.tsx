@@ -1,4 +1,4 @@
-import { Close, Menu } from "@mui/icons-material";
+import { Close, Menu } from '@mui/icons-material'
 import {
   Box,
   Container,
@@ -7,75 +7,77 @@ import {
   styled,
   Theme,
   Typography,
-} from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { RoutePath } from "../../config/routes";
-import { isMobile } from "../../utils/is-mobile";
-import { Logo } from "../logo";
-import { HeaderAppBar } from "./styles";
+} from '@mui/material'
+import { FC, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { RoutePath } from '../../config/routes'
+import { isMobile } from '../../utils/is-mobile'
+import { Logo } from '../logo'
+import { HeaderAppBar } from './styles'
+import { useLanguage } from '../../context/language.tsx'
 
 const StyledMenuItem = styled(Menu)(({ theme }) => ({
-  transition: "color 0.5s",
-  "&:hover": {
+  transition: 'color 0.5s',
+  '&:hover': {
     color: theme.palette.primary.main,
   },
-}));
+}))
 
 const StyledCloseIcon = styled(Close)(({ theme }) => ({
-  transition: "color 0.5s",
-  "&:hover": {
+  transition: 'color 0.5s',
+  '&:hover': {
     color: theme.palette.primary.main,
   },
-}));
+}))
 
 const getColor = (path: RoutePath, theme: Theme) => {
   if (path === RoutePath.Home) {
-    return theme.palette.secondary.main;
+    return theme.palette.secondary.main
   }
   return window.location.pathname === path
     ? theme.palette.primary.main
-    : theme.palette.secondary.main;
-};
+    : theme.palette.secondary.main
+}
 
 const StyledTypography = styled(Typography)<{ route?: RoutePath }>(
   ({ theme, route = RoutePath.Portfolio }) => ({
-    transition: "color 0.5s",
+    transition: 'color 0.5s',
     color: getColor(route, theme),
-    "&:hover": {
+    '&:hover': {
       color: theme.palette.primary.main,
-      cursor: "pointer",
+      cursor: 'pointer',
     },
   })
-);
+)
 
 const Header: FC = () => {
-  const [mobile, setMobile] = useState(isMobile());
-  const [opacityTrigger, setOpacityTrigger] = useState(window.scrollY > 577);
-  const [open, setOpen] = useState(false);
+  const [mobile, setMobile] = useState(isMobile())
+  const [opacityTrigger, setOpacityTrigger] = useState(window.scrollY > 577)
+  const [open, setOpen] = useState(false)
+  const { currentLanguage } = useLanguage()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const onOpen = () => setOpen(true);
-  const onClose = () => setOpen(false);
+  const onOpen = () => setOpen(true)
+  const onClose = () => setOpen(false)
 
   const onRouteClick = (route: RoutePath) => () => {
-    onClose();
-    navigate(route);
-    window.scrollTo({ top: 0 });
-  };
+    onClose()
+    navigate(route)
+    window.scrollTo({ top: 0 })
+  }
 
   useEffect(() => {
-    const handler = () => setMobile(isMobile());
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler);
-  }, []);
+    const handler = () => setMobile(isMobile())
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
 
   useEffect(() => {
-    const handler = () => setOpacityTrigger(window.scrollY > 577);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+    const handler = () => setOpacityTrigger(window.scrollY > 577)
+    window.addEventListener('scroll', handler)
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
 
   return (
     <HeaderAppBar id="header" triggerOpacity={opacityTrigger}>
@@ -84,14 +86,14 @@ const Header: FC = () => {
           flexGrow={1}
           bgcolor="#000000"
           display="flex"
-          flexDirection={"column"}
+          flexDirection={'column'}
           width="100dvw"
         >
-          <Container maxWidth={"lg"}>
+          <Container maxWidth={'lg'}>
             <Box
               display="flex"
-              alignItems={"center"}
-              justifyContent={"space-between"}
+              alignItems={'center'}
+              justifyContent={'space-between'}
               height={80}
             >
               <Logo />
@@ -108,20 +110,20 @@ const Header: FC = () => {
               py={2}
               mx={2}
             >
-              Início
+              {currentLanguage.Home}
             </StyledTypography>
             <StyledTypography
               route={RoutePath.About}
               onClick={onRouteClick(RoutePath.About)}
               color={
                 window.location.href.includes(RoutePath.About)
-                  ? "primary"
-                  : "secondary"
+                  ? 'primary'
+                  : 'secondary'
               }
               py={2}
               mx={2}
             >
-              Sobre
+              {currentLanguage.About}
             </StyledTypography>
             <StyledTypography
               route={RoutePath.Services}
@@ -130,7 +132,7 @@ const Header: FC = () => {
               py={2}
               mx={2}
             >
-              Serviços
+              {currentLanguage.Services}
             </StyledTypography>
 
             <StyledTypography
@@ -140,22 +142,22 @@ const Header: FC = () => {
               py={2}
               mx={2}
             >
-              Contacte-nos
+              {currentLanguage.ContactUs}
             </StyledTypography>
           </Container>
         </Box>
       </Drawer>
-      <Container maxWidth={"lg"}>
+      <Container maxWidth={'lg'}>
         <Box
           display="flex"
-          alignItems={"center"}
+          alignItems={'center'}
           justifyContent="space-between"
           height={80}
         >
           <Logo />
           <Box
             hidden={mobile}
-            display={mobile ? "none" : "flex"}
+            display={mobile ? 'none' : 'flex'}
             alignItems="center"
           >
             <StyledTypography
@@ -165,7 +167,7 @@ const Header: FC = () => {
               color="secondary"
               mx={2}
             >
-              Início
+              {currentLanguage.Home}
             </StyledTypography>
             <StyledTypography
               route={RoutePath.About}
@@ -174,7 +176,7 @@ const Header: FC = () => {
               color="secondary"
               mx={2}
             >
-              Sobre
+              {currentLanguage.About}
             </StyledTypography>
             <StyledTypography
               route={RoutePath.Services}
@@ -183,7 +185,7 @@ const Header: FC = () => {
               color="secondary"
               mx={2}
             >
-              Serviços
+              {currentLanguage.Services}
             </StyledTypography>
             {/* <StyledTypography
               onClick={() => navigate(RoutePath.Portfolio)}
@@ -200,7 +202,7 @@ const Header: FC = () => {
               color="secondary"
               mx={2}
             >
-              Contacte-nos
+              {currentLanguage.ContactUs}
             </StyledTypography>
           </Box>
           <Box hidden={!mobile}>
@@ -213,7 +215,7 @@ const Header: FC = () => {
         </Box>
       </Container>
     </HeaderAppBar>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,21 +1,21 @@
-import { Box, Fade, Grid, Slide, Typography, useTheme } from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import { GradientButton } from "../gradient-button";
-import { GradientTypography } from "../gradient-typography";
+import { Box, Fade, Grid, Slide, Typography, useTheme } from '@mui/material'
+import { FC, useEffect, useState } from 'react'
+import { GradientButton } from '../gradient-button'
+import { GradientTypography } from '../gradient-typography'
 
-import svg from "../../assets/ilustration1.svg";
-import { isMobile as isMobileFunction } from "../../utils/is-mobile";
-import { smoothScrollTo } from "../../utils/scroll-to-element";
+import svg from '../../assets/ilustration1.svg'
+import { isMobile as isMobileFunction } from '../../utils/is-mobile'
+import { smoothScrollTo } from '../../utils/scroll-to-element'
 
 const Banner: FC = () => {
-  const theme = useTheme();
-  const [isMobile, setIsMobile] = useState(isMobileFunction());
+  const theme = useTheme()
+  const [isMobile, setIsMobile] = useState(isMobileFunction())
 
   useEffect(() => {
-    const handleScroll = () => setIsMobile(isMobileFunction());
-    window.addEventListener("resize", handleScroll);
-    return () => window.removeEventListener("resize", handleScroll);
-  }, []);
+    const handleScroll = () => setIsMobile(isMobileFunction())
+    window.addEventListener('resize', handleScroll)
+    return () => window.removeEventListener('resize', handleScroll)
+  }, [])
 
   return (
     <Box
@@ -33,36 +33,27 @@ const Banner: FC = () => {
             <Slide in={true} direction="down">
               <Typography
                 color="secondary"
-                variant={isMobile ? "h4" : "h2"}
-                textAlign={isMobile ? "center" : "left"}
+                variant={isMobile ? 'h4' : 'h2'}
+                textAlign={isMobile ? 'center' : 'left'}
               >
                 Encontre
               </Typography>
             </Slide>
             <Slide in={true} direction="left">
               <GradientTypography
-                variant={isMobile ? "h4" : "h2"}
-                textAlign={isMobile ? "center" : "left"}
+                variant={isMobile ? 'h4' : 'h2'}
+                textAlign={isMobile ? 'center' : 'left'}
               >
-                {" "}
+                {' '}
                 profissionais talentosos
               </GradientTypography>
             </Slide>
-            <Slide in={true} direction="right">
-              <Typography
-                variant={isMobile ? "h4" : "h2"}
-                color="secondary"
-                textAlign={isMobile ? "center" : "left"}
-              >
-                para a sua empresa
-              </Typography>
-            </Slide>
             <Slide direction="up" in={true}>
-              <Box mt={3} width={isMobile ? "100%" : "75%"}>
+              <Box mt={3} width={isMobile ? '100%' : '75%'}>
                 <Typography
                   variant="body1"
                   color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
+                  textAlign={isMobile ? 'center' : 'left'}
                 >
                   A Engage é uma agência de marketing digital especializada em
                   redes sociais, que conta com diversos profissionais de áreas
@@ -78,14 +69,14 @@ const Banner: FC = () => {
             <Fade in={true}>
               <Box
                 display="flex"
-                justifyContent={isMobile ? "center" : "left"}
+                justifyContent={isMobile ? 'center' : 'left'}
                 py={3}
               >
                 <GradientButton
                   onClick={() =>
-                    smoothScrollTo("services", {
-                      inline: "start",
-                      block: "start",
+                    smoothScrollTo('services', {
+                      inline: 'start',
+                      block: 'start',
                     })
                   }
                   variant="contained"
@@ -98,14 +89,14 @@ const Banner: FC = () => {
         </Grid>
         <Grid item xs={12} md={5}>
           <Slide in={true} direction="left">
-            <Box py={isMobile ? 6 : 0} display="flex" justifyContent={"center"}>
-              <img width={"100%"} src={svg} />
+            <Box py={isMobile ? 6 : 0} display="flex" justifyContent={'center'}>
+              <img width={'100%'} src={svg} />
             </Box>
           </Slide>
         </Grid>
       </Grid>
     </Box>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

@@ -1,8 +1,8 @@
-import { styled, Typography } from "@mui/material";
+import { styled, Typography } from '@mui/material'
 
 export const GradientTypography = styled(Typography)({
   background:
-    "linear-gradient(to right,#ff75c3,#ffa647,#ffe83f,#9fff5b,#70e2ff,#cd93ff)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-});
+    'linear-gradient(to right,#FFDC80,#FCAF45,#F56040,#FD1D1D,#E1306C,#E1306C)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+})

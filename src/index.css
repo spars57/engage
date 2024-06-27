@@ -1,25 +1,45 @@
 @font-face {
-  font-family: 'signika-bold';
-  src: url(./assets/fonts/Signika-Bold.ttf) format('woff');
+  font-family: 'league-spartan-black';
+  src: url(./assets/fonts/LeagueSpartan-Black.ttf) format('woff');
 }
 @font-face {
-  font-family: 'signika-light';
-  src: url(./assets/fonts/Signika-Light.ttf) format('woff');
-}
-
-@font-face {
-  font-family: 'signika-medium';
-  src: url(./assets/fonts/Signika-Medium.ttf) format('woff');
+  font-family: 'league-spartan-bold';
+  src: url(./assets/fonts/LeagueSpartan-Bold.ttf) format('woff');
 }
 
 @font-face {
-  font-family: 'signika-regular';
-  src: url(./assets/fonts/Signika-Regular.ttf) format('woff');
+  font-family: 'league-spartan-extrabold';
+  src: url(./assets/fonts/LeagueSpartan-ExtraBold.ttf) format('woff');
 }
 
 @font-face {
-  font-family: 'signika-semibold';
-  src: url(./assets/fonts/Signika-SemiBold.ttf) format('woff');
+  font-family: 'league-spartan-extralight';
+  src: url(./assets/fonts/LeagueSpartan-ExtraLight.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'league-spartan-light';
+  src: url(./assets/fonts/LeagueSpartan-Light.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'league-spartan-medium';
+  src: url(./assets/fonts/LeagueSpartan-Medium.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'league-spartan-regular';
+  src: url(./assets/fonts/LeagueSpartan-Regular.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'league-spartan-semibold';
+  src: url(./assets/fonts/LeagueSpartan-SemiBold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'league-spartan-thin';
+  src: url(./assets/fonts/LeagueSpartan-Thin.ttf) format('woff');
 }
 
 

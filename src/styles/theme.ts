@@ -20,38 +20,38 @@ export const Theme = createTheme({
   typography: {
     allVariants: {
       letterSpacing: 1,
-      fontFamily: "signika-medium",
+      fontFamily: "league-spartan-medium",
     },
     h6: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
     h5: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
     h4: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
     h3: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
     h2: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
     h1: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
 
     body1: {
-      fontFamily: "signika-medium",
+      fontFamily: "league-spartan-medium",
     },
     body2: {
-      fontFamily: "signika-medium",
+      fontFamily: "league-spartan-medium",
     },
     subtitle1: {
       fontSize: 20,
     },
     button: {
-      fontFamily: "signika-bold",
+      fontFamily: "league-spartan-bold",
     },
   },
 });

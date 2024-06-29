@@ -5,32 +5,34 @@ import {
   styled,
   Typography,
   useTheme,
-} from "@mui/material";
-import { FC } from "react";
-import { useNavigate } from "react-router-dom";
-import { RoutePath } from "../../config/routes";
-import { Logo } from "../logo";
-import SocialMediaFooterComponent from "./social-media";
+} from '@mui/material'
+import { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { RoutePath } from '../../config/routes'
+import { useLanguage } from '../../context/language'
+import { Logo } from '../logo'
+import SocialMediaFooterComponent from './social-media'
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.secondary.main,
-  transition: "color 0.5s",
-  "&:hover": {
+  transition: 'color 0.5s',
+  '&:hover': {
     color: theme.palette.primary.main,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
-}));
+}))
 
 const Footer: FC = () => {
-  const theme = useTheme();
-  const navigate = useNavigate();
+  const theme = useTheme()
+  const navigate = useNavigate()
+  const { currentLanguage } = useLanguage()
   return (
-    <Box display="flex" bgcolor="#181818" flexDirection={"column"}>
+    <Box display="flex" bgcolor="#181818" flexDirection={'column'}>
       <Container maxWidth="lg">
         <Box
           py={2}
           display="flex"
-          alignItems={"center"}
+          alignItems={'center'}
           width="100%"
           justifyContent="space-between"
         >
@@ -45,29 +47,29 @@ const Footer: FC = () => {
       <Container maxWidth="lg">
         <Box
           display="flex"
-          alignItems={"center"}
-          justifyContent={"space-between"}
+          alignItems={'center'}
+          justifyContent={'space-between'}
           py={2}
         >
           <Typography variant="caption" color="secondary">
             Copyright © 2024 ENGAGE
           </Typography>
-          <Box display="flex" alignItems={"center"}>
+          <Box display="flex" alignItems={'center'}>
             <Box mx={2} onClick={() => navigate(RoutePath.Terms)}>
               <StyledTypography variant="caption" color="secondary">
-                Termos e Condições
+                {currentLanguage.TermsAndConditions}
               </StyledTypography>
             </Box>
             <Box mx={2} onClick={() => navigate(RoutePath.Policy)}>
               <StyledTypography variant="caption" color="secondary">
-                Politicas de Privacidade
+                {currentLanguage.PrivacyPolitics}
               </StyledTypography>
             </Box>
           </Box>
         </Box>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

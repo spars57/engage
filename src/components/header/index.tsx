@@ -1,20 +1,25 @@
 import { Close, Menu } from '@mui/icons-material'
 import {
+  Avatar,
   Box,
   Container,
   Drawer,
   IconButton,
   styled,
   Theme,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import { FC, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RoutePath } from '../../config/routes'
+import { useLanguage } from '../../context/language.tsx'
 import { isMobile } from '../../utils/is-mobile'
 import { Logo } from '../logo'
 import { HeaderAppBar } from './styles'
-import { useLanguage } from '../../context/language.tsx'
+
+import PortugalFlag from '../../assets/flags/portugal.png'
+import UkFlag from '../../assets/flags/united-kingdom.png'
 
 const StyledMenuItem = styled(Menu)(({ theme }) => ({
   transition: 'color 0.5s',
@@ -54,7 +59,7 @@ const Header: FC = () => {
   const [mobile, setMobile] = useState(isMobile())
   const [opacityTrigger, setOpacityTrigger] = useState(window.scrollY > 577)
   const [open, setOpen] = useState(false)
-  const { currentLanguage } = useLanguage()
+  const { currentLanguage, currentCountry, setCurrentCountry } = useLanguage()
 
   const navigate = useNavigate()
 
@@ -144,6 +149,30 @@ const Header: FC = () => {
             >
               {currentLanguage.ContactUs}
             </StyledTypography>
+            <StyledTypography
+              route={RoutePath.Talent}
+              onClick={onRouteClick(RoutePath.Talent)}
+              color="secondary"
+              py={2}
+              mx={2}
+            >
+              {currentLanguage.Talent}
+            </StyledTypography>
+            <Tooltip
+              title={
+                currentCountry === 'pt'
+                  ? currentLanguage.English
+                  : currentLanguage.Portuguese
+              }
+            >
+              <Avatar
+                onClick={() =>
+                  setCurrentCountry(currentCountry === 'pt' ? 'uk' : 'pt')
+                }
+                src={currentCountry === 'pt' ? UkFlag : PortugalFlag}
+                sx={{ width: 30, height: 30, mx: 2 }}
+              />
+            </Tooltip>
           </Container>
         </Box>
       </Drawer>
@@ -187,14 +216,15 @@ const Header: FC = () => {
             >
               {currentLanguage.Services}
             </StyledTypography>
-            {/* <StyledTypography
-              onClick={() => navigate(RoutePath.Portfolio)}
+            <StyledTypography
+              route={RoutePath.Talent}
+              onClick={onRouteClick(RoutePath.Talent)}
               fontSize={18}
               color="secondary"
               mx={2}
             >
-              Portfolio
-            </StyledTypography> */}
+              {currentLanguage.Talent}
+            </StyledTypography>
             <StyledTypography
               route={RoutePath.Contact}
               onClick={onRouteClick(RoutePath.Contact)}
@@ -204,6 +234,21 @@ const Header: FC = () => {
             >
               {currentLanguage.ContactUs}
             </StyledTypography>
+            <Tooltip
+              title={
+                currentCountry === 'pt'
+                  ? currentLanguage.English
+                  : currentLanguage.Portuguese
+              }
+            >
+              <Avatar
+                onClick={() =>
+                  setCurrentCountry(currentCountry === 'pt' ? 'uk' : 'pt')
+                }
+                src={currentCountry === 'pt' ? UkFlag : PortugalFlag}
+                sx={{ width: 20, height: 20 }}
+              />
+            </Tooltip>
           </Box>
           <Box hidden={!mobile}>
             <Typography color="secondary" mx={2}>

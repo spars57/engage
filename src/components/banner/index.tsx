@@ -4,12 +4,14 @@ import { GradientButton } from '../gradient-button'
 import { GradientTypography } from '../gradient-typography'
 
 import svg from '../../assets/ilustration1.svg'
+import { useLanguage } from '../../context/language'
 import { isMobile as isMobileFunction } from '../../utils/is-mobile'
 import { smoothScrollTo } from '../../utils/scroll-to-element'
 
 const Banner: FC = () => {
   const theme = useTheme()
   const [isMobile, setIsMobile] = useState(isMobileFunction())
+  const { currentLanguage } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => setIsMobile(isMobileFunction())
@@ -36,7 +38,7 @@ const Banner: FC = () => {
                 variant={isMobile ? 'h4' : 'h2'}
                 textAlign={isMobile ? 'center' : 'left'}
               >
-                Encontre
+                {currentLanguage.Find}
               </Typography>
             </Slide>
             <Slide in={true} direction="left">
@@ -45,7 +47,7 @@ const Banner: FC = () => {
                 textAlign={isMobile ? 'center' : 'left'}
               >
                 {' '}
-                profissionais talentosos
+                {currentLanguage.TalentedProfessionals}
               </GradientTypography>
             </Slide>
             <Slide direction="up" in={true}>
@@ -55,14 +57,7 @@ const Banner: FC = () => {
                   color="secondary"
                   textAlign={isMobile ? 'center' : 'left'}
                 >
-                  A Engage é uma agência de marketing digital especializada em
-                  redes sociais, que conta com diversos profissionais de áreas
-                  como Marketing e Publicidade, Gestão, Design e Produção de
-                  Contéudos Digitais.
-                  <p></p>
-                  Ao escolher o nosso serviço terá acesso a uma vasta gama de
-                  profissionais talentosos que irão impulsionar os resultados da
-                  sua empresa para o próximo nível.
+                  {currentLanguage.HomeBannerDescription}
                 </Typography>
               </Box>
             </Slide>
@@ -81,7 +76,7 @@ const Banner: FC = () => {
                   }
                   variant="contained"
                 >
-                  Saiba mais
+                  {currentLanguage.LearnMore}
                 </GradientButton>
               </Box>
             </Fade>

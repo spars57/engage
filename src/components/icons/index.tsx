@@ -1,4 +1,4 @@
-const TikTok = ({ color = '#FFFFFF' }) => {
+const TikTok = () => {
   return (
     <svg
       style={{ filter: 'invert(1)' }}

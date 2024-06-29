@@ -1,5 +1,4 @@
 import JoanaPerez from '../../assets/agents/joana-perez.jpg'
-import { LanguageType } from '../../languages/uk'
 
 import AngiCosta from '../../assets/agents/angi-costa.jpg'
 import MadalenaAragao from '../../assets/agents/madalena-aragão.jpg'
@@ -52,7 +51,7 @@ const Mapper: InfluencersMapper = [
   },
 ]
 
-export const CategoriesMapper1 = (lang: LanguageType): InfluencersMapper => [
+export const CategoriesMapper1: InfluencersMapper = [
   {
     name: 'Margarida Corceiro',
     image70Opacity:
@@ -79,7 +78,7 @@ export const CategoriesMapper1 = (lang: LanguageType): InfluencersMapper => [
   },
 ]
 
-export const CategoriesMapper2 = (lang: LanguageType): InfluencersMapper => [
+export const CategoriesMapper2: InfluencersMapper = [
   {
     name: 'Angi Costa',
     image70Opacity: AngiCosta,

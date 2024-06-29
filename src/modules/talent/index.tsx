@@ -180,7 +180,7 @@ const Talent = () => {
                                   size="small"
                                   onClick={() => openUrlInNewTab(tiktokUrl)}
                                 >
-                                  <TikTok color="secondary" />
+                                  <TikTok />
                                 </IconButton>
                               </Tooltip>
                             </Box>
@@ -284,36 +284,34 @@ const Talent = () => {
         <Box ref={categoriesRef1} pt={20}>
           <GapGrid config={1} bgcolor={theme.palette.common.black}>
             <Grid px={2} container spacing={2}>
-              {CategoriesMapper1(currentLanguage).map(
-                ({ name, image70Opacity }) => (
-                  <Grid item xs={6} sm={6} md={3} lg={3}>
-                    <Slide in={categoriesTrigger1} direction="left">
-                      <StyledGridItemWithImage
+              {CategoriesMapper1.map(({ name, image70Opacity }) => (
+                <Grid item xs={6} sm={6} md={3} lg={3}>
+                  <Slide in={categoriesTrigger1} direction="left">
+                    <StyledGridItemWithImage
+                      display="flex"
+                      bgcolor={'red'}
+                      alignItems={'bottom'}
+                      url={image70Opacity}
+                    >
+                      <Typography
+                        variant="subtitle1"
+                        fontSize={20}
                         display="flex"
-                        bgcolor={'red'}
-                        alignItems={'bottom'}
-                        url={image70Opacity}
+                        justifyContent={'center'}
+                        sx={{
+                          textShadow: '0 0 3px #000000',
+                          background:
+                            'linear-gradient(0deg, rgba(0,0,0,0.40242034313725494) 0%, rgba(255,255,255,0) 100%)',
+                          width: '100%',
+                        }}
+                        className="hover-text"
                       >
-                        <Typography
-                          variant="subtitle1"
-                          fontSize={20}
-                          display="flex"
-                          justifyContent={'center'}
-                          sx={{
-                            textShadow: '0 0 3px #000000',
-                            background:
-                              'linear-gradient(0deg, rgba(0,0,0,0.40242034313725494) 0%, rgba(255,255,255,0) 100%)',
-                            width: '100%',
-                          }}
-                          className="hover-text"
-                        >
-                          {name}
-                        </Typography>
-                      </StyledGridItemWithImage>
-                    </Slide>
-                  </Grid>
-                )
-              )}
+                        {name}
+                      </Typography>
+                    </StyledGridItemWithImage>
+                  </Slide>
+                </Grid>
+              ))}
             </Grid>
           </GapGrid>
         </Box>
@@ -363,36 +361,34 @@ const Talent = () => {
         <Box ref={categoriesRef2} pb={20}>
           <GapGrid config={1} bgcolor={theme.palette.common.black}>
             <Grid px={2} container spacing={2}>
-              {CategoriesMapper2(currentLanguage).map(
-                ({ name, image70Opacity }) => (
-                  <Grid item xs={6} sm={6} md={3} lg={3}>
-                    <Slide in={categoriesTrigger2} direction="right">
-                      <StyledGridItemWithImage
+              {CategoriesMapper2.map(({ name, image70Opacity }) => (
+                <Grid item xs={6} sm={6} md={3} lg={3}>
+                  <Slide in={categoriesTrigger2} direction="right">
+                    <StyledGridItemWithImage
+                      display="flex"
+                      bgcolor={'red'}
+                      alignItems={'bottom'}
+                      url={image70Opacity}
+                    >
+                      <Typography
+                        variant="subtitle1"
+                        fontSize={20}
                         display="flex"
-                        bgcolor={'red'}
-                        alignItems={'bottom'}
-                        url={image70Opacity}
+                        justifyContent={'center'}
+                        sx={{
+                          textShadow: '0 0 3px #000000',
+                          background:
+                            'linear-gradient(0deg, rgba(0,0,0,0.40242034313725494) 0%, rgba(255,255,255,0) 100%)',
+                          width: '100%',
+                        }}
+                        className="hover-text"
                       >
-                        <Typography
-                          variant="subtitle1"
-                          fontSize={20}
-                          display="flex"
-                          justifyContent={'center'}
-                          sx={{
-                            textShadow: '0 0 3px #000000',
-                            background:
-                              'linear-gradient(0deg, rgba(0,0,0,0.40242034313725494) 0%, rgba(255,255,255,0) 100%)',
-                            width: '100%',
-                          }}
-                          className="hover-text"
-                        >
-                          {name}
-                        </Typography>
-                      </StyledGridItemWithImage>
-                    </Slide>
-                  </Grid>
-                )
-              )}
+                        {name}
+                      </Typography>
+                    </StyledGridItemWithImage>
+                  </Slide>
+                </Grid>
+              ))}
             </Grid>
           </GapGrid>
         </Box>

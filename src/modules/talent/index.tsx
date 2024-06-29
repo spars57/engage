@@ -347,7 +347,14 @@ const Talent = () => {
                   {currentLanguage.TalentContactUsDescription}
                 </Typography>
                 <Box mt={3} display="flex" justifyContent={'center'}>
-                  <TikTokButton>{currentLanguage.ContactUs}</TikTokButton>
+                  <TikTokButton>
+                    <a
+                      className="children"
+                      href={`mailto:${import.meta.env.VITE_OWNER_EMAIL}`}
+                    >
+                      {currentLanguage.ContactUs}
+                    </a>
+                  </TikTokButton>
                 </Box>
               </Box>
             </Fade>

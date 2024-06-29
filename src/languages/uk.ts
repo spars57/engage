@@ -34,6 +34,7 @@ export const UkLanguage = {
   TalentContactUsTitle: 'Your partners for the perfect partnership',
   TalentContactUsDescription:
     "Access the nacional's largest roster of verified content creators, celebrities, and athletes with an affinity for your target audience.",
+  SendUsAnEmail: 'Send us an email',
 } as const
 
 export type LanguageType = { [K in keyof typeof UkLanguage]: string }

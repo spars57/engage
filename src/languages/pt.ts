@@ -36,4 +36,5 @@ export const PtLanguage: LanguageType = {
   TalentContactUsTitle: 'Os seus parceiros para a colaboração perfeita',
   TalentContactUsDescription:
     'Aceda à maior lista nacional de criadores de conteúdo, celebridades e atletas verificados, com afinidade pelo seu público-alvo.',
+  SendUsAnEmail: 'Envie-nos um email',
 }

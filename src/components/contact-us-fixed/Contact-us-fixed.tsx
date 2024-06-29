@@ -9,10 +9,10 @@ import {
   useTheme,
 } from '@mui/material'
 import { useState } from 'react'
-import TikTokButton from '../../components/buttons/tiktok-button'
-import SmallLogoWhite from '../../components/logo/small-logo-white'
 import { useLanguage } from '../../context/language'
 import { Colors } from '../../styles/colors'
+import TikTokButton from '../buttons/tiktok-button'
+import SmallLogoWhite from '../logo/small-logo-white'
 
 const StyledIconButton = styled(IconButton)({
   backgroundColor: Colors.tiktok.pink,
@@ -102,7 +102,14 @@ const ContactUsFixed = () => {
           </Box>
 
           <Box display="flex" justifyContent={'center'}>
-            <TikTokButton>Envie-nos um Email</TikTokButton>
+            <TikTokButton>
+              <a
+                href={`mailto:${import.meta.env.VITE_OWNER_EMAIL}`}
+                className="children"
+              >
+                {currentLanguage.SendUsAnEmail}
+              </a>
+            </TikTokButton>
           </Box>
         </Box>
       </Popover>

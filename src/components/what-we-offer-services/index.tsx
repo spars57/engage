@@ -1,14 +1,21 @@
 import { Box, Container, Grid, styled, Typography } from '@mui/material'
 import { useLanguage } from '../../context/language.tsx'
+import management from '../../assets/background/management.png'
+import consultancy from '../../assets/background/consultancy.png'
+import influencers from '../../assets/background/influencers.png'
+import events from '../../assets/background/events.png'
+import design from '../../assets/background/design.png'
+import websites from '../../assets/background/websites.png'
 
 const ServiceBox = styled(Box)<{ url?: string }>(({ theme, url }) => ({
   position: 'relative',
   border: `3px solid ${theme.palette.common.black}`,
   height: '300px',
   background: `url(${url}) no-repeat center center`,
-  backgroundSize: '100% 100%',
+  backgroundSize: 'auto 100%',
   backgroundColor: theme.palette.common.black,
   overflow: 'hidden',
+  variants: '',
 
   '.title': {
     transition: 'color 0.3s',
@@ -39,6 +46,7 @@ const ServiceBox = styled(Box)<{ url?: string }>(({ theme, url }) => ({
   },
 
   '&:hover': {
+    cursor: 'pointer',
     '.title': {
       color: theme.palette.common.black,
     },
@@ -49,12 +57,15 @@ const ServiceBox = styled(Box)<{ url?: string }>(({ theme, url }) => ({
 
   '@media (max-width: 600px)': {
     height: '300px',
+    backgroundSize: '100% 100%',
   },
   '@media (min-width: 600px) and (max-width: 960px)': {
     height: '300px',
+    backgroundSize: '100% 100%',
   },
   '@media (min-width: 960px) and (max-width: 1280px)': {
     height: '300px',
+    backgroundSize: '100% 100%',
   },
   '@media (min-width: 1280px)': {
     height: '350px',
@@ -96,6 +107,7 @@ const Index = () => {
 
   const mapper = [
     {
+      url: management,
       title: currentLanguage.SocialMediaManagement,
       description:
         currentCountry == 'pt'
@@ -103,6 +115,7 @@ const Index = () => {
           : descriptionsMapperUK.SocialMediaManagement,
     },
     {
+      url: consultancy,
       title: currentLanguage.SocialMediaConsultancy,
       description:
         currentCountry == 'pt'
@@ -110,6 +123,7 @@ const Index = () => {
           : descriptionsMapperUK.SocialMediaConsultancy,
     },
     {
+      url: influencers,
       title: currentLanguage.InfluencersMarketing,
       description:
         currentCountry == 'pt'
@@ -117,6 +131,7 @@ const Index = () => {
           : descriptionsMapperUK.InfluencersMarketing,
     },
     {
+      url: events,
       title: currentLanguage.EventsManagement,
       description:
         currentCountry == 'pt'
@@ -124,6 +139,7 @@ const Index = () => {
           : descriptionsMapperUK.EventsManagement,
     },
     {
+      url: design,
       title: currentLanguage.DesignServices,
       description:
         currentCountry == 'pt'
@@ -131,6 +147,7 @@ const Index = () => {
           : descriptionsMapperUK.DesignServices,
     },
     {
+      url: websites,
       title: currentLanguage.WebsiteDevelopment,
       description:
         currentCountry == 'pt'
@@ -147,11 +164,11 @@ const Index = () => {
         </Typography>
 
         <Grid container spacing={2}>
-          {mapper.map(({ title, description }) => (
+          {mapper.map(({ title, description, url }) => (
             <Grid item xs={12} md={6} lg={4}>
-              <ServiceBox>
+              <ServiceBox url={url}>
                 <Box px={2} pt={2}>
-                  <Typography variant={'h5'} className={'title'}>
+                  <Typography variant={'h5'} fontSize={28} className={'title'}>
                     {title}
                   </Typography>
                   <Typography

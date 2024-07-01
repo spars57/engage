@@ -62,7 +62,7 @@ const Banner: FC = () => {
                   >
                     <TikTokButton
                       onClick={() =>
-                        smoothScrollTo('services', {
+                        smoothScrollTo('company-stats', {
                           inline: 'start',
                           block: 'start',
                         })

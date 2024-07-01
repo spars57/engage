@@ -26,7 +26,7 @@ const StyledIconButton = styled(IconButton)({
 
 const ContactUsFixed = () => {
   const theme = useTheme()
-  const { currentLanguage } = useLanguage()
+  const { currentLanguage, currentCountry } = useLanguage()
   const [open, setOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState<
     (EventTarget & HTMLButtonElement) | null
@@ -96,8 +96,9 @@ const ContactUsFixed = () => {
               justifyContent={'center'}
               color="secondary"
             >
-              Envie-nos um email com as suas questões, se fizer sentido
-              agendaremos uma reunião consigo para lhe apresentar a Engage.
+              {currentCountry == 'pt'
+                ? 'Envie-nos um email com as suas questões, se fizer sentido agendaremos uma reunião consigo para lhe apresentar a Engage.'
+                : 'Send us an email with your questions, if it makes sense we will schedule a meeting with you to introduce you to Engage.'}
             </Typography>
           </Box>
 

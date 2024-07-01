@@ -36,7 +36,6 @@ const LanguageProvider: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     if (currentCountry === 'pt') setCurrentLanguage(PtLanguage)
     else setCurrentLanguage(UkLanguage)
-
     localStorage.setItem(localstorageKey, currentCountry)
   }, [currentCountry])
 

@@ -5,7 +5,7 @@ import { useLanguage } from '../../context/language.tsx'
 import TikTokButton from '../buttons/tiktok-button.tsx'
 import { Colors } from '../../styles/colors.ts'
 
-const Services: FC = () => {
+const CompanyStats: FC = () => {
   const { currentCountry, currentLanguage } = useLanguage()
   const [isMobile, setIsMobile] = useState(isMobileFunction())
 
@@ -72,10 +72,19 @@ const Services: FC = () => {
               {currentLanguage.Marketing}
             </Typography>
             <Typography mt={1} variant={'h3'}>
-              There’s Traditional Social Marketing. Then There’s Viral Nation
+              {currentCountry == 'pt' ? (
+                <>
+                  Existe o Marketing tradicional, depois existe
+                  <br /> a Engage.
+                </>
+              ) : (
+                'There’s Traditional Social Marketing. Then There’s Engage'
+              )}
             </Typography>
             <Typography mt={1} variant={'body1'}>
-              Moving towards a social-first approach doesn’t have to be hard.{' '}
+              {currentCountry == 'pt'
+                ? 'Dar o primeiro passo nas redes sociais não precisa de ser difícil.'
+                : 'Moving towards a social-first approach doesn’t have to be hard.'}
             </Typography>
             <Box mt={1}>
               <TikTokButton variant={'white'}>
@@ -109,4 +118,4 @@ const Services: FC = () => {
   )
 }
 
-export default Services
+export default CompanyStats

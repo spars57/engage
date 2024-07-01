@@ -71,7 +71,7 @@ const CompanyStats: FC = () => {
             <Typography variant={'button'}>
               {currentLanguage.Marketing}
             </Typography>
-            <Typography mt={1} variant={'h3'}>
+            <Typography mt={1} variant={isMobile ? 'h4' : 'h3'}>
               {currentCountry == 'pt' ? (
                 <>
                   Existe o Marketing tradicional, depois existe
@@ -97,10 +97,12 @@ const CompanyStats: FC = () => {
               {marketingMapper.map(({ title, description, color }) => (
                 <Grid item xs={12} md={6}>
                   <Box>
-                    <Typography variant={'h2'} py={0.5}>
+                    <Typography variant={isMobile ? 'h4' : 'h3'} py={0.5}>
                       {title}
                     </Typography>
-                    <Typography variant={'h5'}>{description}</Typography>
+                    <Typography variant={isMobile ? 'h5' : 'h4'}>
+                      {description}
+                    </Typography>
                     <LinearProgress
                       variant={'determinate'}
                       value={100}

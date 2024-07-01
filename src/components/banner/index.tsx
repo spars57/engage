@@ -27,7 +27,7 @@ const Banner: FC = () => {
                 <Slide in={true} direction="down">
                   <Typography
                     color="secondary"
-                    variant={isMobile ? 'h2' : 'h2'}
+                    variant={isMobile ? 'h4' : 'h2'}
                     textAlign={isMobile ? 'center' : 'left'}
                   >
                     {currentLanguage.Find}
@@ -36,7 +36,7 @@ const Banner: FC = () => {
                 <Slide in={true} direction="left">
                   <Typography
                     color={'secondary'}
-                    variant={isMobile ? 'h3' : 'h2'}
+                    variant={isMobile ? 'h4' : 'h2'}
                     textAlign={isMobile ? 'center' : 'left'}
                   >
                     {' '}

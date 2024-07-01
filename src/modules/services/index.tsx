@@ -1,14 +1,14 @@
-import { Box } from "@mui/material";
-import Services from "../../components/services";
+import { Box } from '@mui/material'
+import WhatWeOffer from '../../components/what-we-offer-services/index.tsx'
 
 const Service = () => {
   return (
-    <Box bgcolor={"black"} sx={{ paddingTop: "80px" }}>
+    <Box bgcolor={'black'}>
       <Box py={10}>
-        <Services />
+        <WhatWeOffer />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Service;
+export default Service

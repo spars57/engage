@@ -1,203 +1,112 @@
-import { Box, Container, Grid, Slide, Typography } from "@mui/material";
-import { FC, useEffect, useRef, useState } from "react";
-import { isMobile as isMobileFunction } from "../../utils/is-mobile";
-import { GradientTypography } from "../gradient-typography";
+import { Box, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { FC, useEffect, useRef, useState } from 'react'
+import { isMobile as isMobileFunction } from '../../utils/is-mobile'
+import { useLanguage } from '../../context/language.tsx'
+import TikTokButton from '../buttons/tiktok-button.tsx'
+import { Colors } from '../../styles/colors.ts'
 
-type Props = {
-  triggeringPoint?: number;
-};
+const Services: FC = () => {
+  const { currentCountry, currentLanguage } = useLanguage()
+  const [isMobile, setIsMobile] = useState(isMobileFunction())
 
-const Services: FC<Props> = ({ triggeringPoint = -1 }) => {
-  const [isMobile, setIsMobile] = useState(isMobileFunction());
-  const [trigger, setTrigger] = useState(window.scrollY > triggeringPoint);
-
-  useEffect(() => {
-    const handler = () => setIsMobile(isMobileFunction());
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler);
-  }, []);
-
-  const elementRef = useRef(null);
+  const elementRef = useRef(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setTrigger(true);
-      },
-      {
-        root: null, // use the viewport as the container
-        rootMargin: "0px",
-        threshold: 0.1, // Adjust this threshold according to your needs
-      }
-    );
+    const observer = new IntersectionObserver(([]) => {})
 
-    if (elementRef.current) observer.observe(elementRef.current);
+    if (elementRef.current) observer.observe(elementRef.current)
     return () => {
-      if (elementRef.current) observer.unobserve(elementRef.current);
-    };
-  }, [elementRef]);
+      if (elementRef.current) observer.unobserve(elementRef.current)
+    }
+  }, [elementRef])
+
+  useEffect(() => {
+    const handler = () => setIsMobile(isMobileFunction())
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+
+  const marketingMapper = [
+    {
+      title: '100M+',
+      description:
+        currentCountry == 'pt' ? 'Contas Alancaçadas' : 'Engaged Accounts',
+      color: Colors.tiktok.pink,
+    },
+    {
+      title: '500%',
+      description:
+        currentCountry == 'pt' ? 'Crescimento ROAS' : 'Avg ROAS increase',
+      color: Colors.instagram.orange,
+    },
+    {
+      title: '16',
+      description: currentCountry == 'pt' ? 'Prémios' : 'Awards',
+      color: Colors.instagram.orange,
+    },
+    {
+      title: '-34%',
+      description: currentCountry == 'pt' ? 'Redução CAC' : 'Avg CAC reduction',
+      color: Colors.tiktok.pink,
+    },
+  ]
 
   return (
     <Box
       ref={elementRef}
-      sx={{ scrollMargin: 100 }}
       id="services"
-      bgcolor={"black"}
-      pb={20}
+      bgcolor={'white'}
+      pt={isMobile ? 0 : 10}
+      pb={isMobile ? 10 : 10}
     >
-      <Slide direction="up" in={trigger}>
-        <Container maxWidth="lg">
-          <Grid container rowGap={10}>
-            <Grid item xs={12}>
-              <Box display={isMobile ? "block" : "flex"}>
-                <Typography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h4" : "h4"}
-                >
-                  Gestão e Consultoria
-                </Typography>
-                {!isMobile && (
-                  <>
-                    &nbsp;
-                    <Typography
-                      color="secondary"
-                      textAlign={isMobile ? "center" : "left"}
-                      variant={isMobile ? "h4" : "h4"}
-                    >
-                      de
+      <Container maxWidth={'lg'}>
+        <Grid
+          spacing={3}
+          container
+          display={'flex'}
+          alignItems={'center'}
+          justifyContent={'space-between'}
+        >
+          <Grid item xs={12} md={6}>
+            <Typography variant={'button'}>
+              {currentLanguage.Marketing}
+            </Typography>
+            <Typography mt={1} variant={'h3'}>
+              There’s Traditional Social Marketing. Then There’s Viral Nation
+            </Typography>
+            <Typography mt={1} variant={'body1'}>
+              Moving towards a social-first approach doesn’t have to be hard.{' '}
+            </Typography>
+            <Box mt={1}>
+              <TikTokButton variant={'white'}>
+                {currentLanguage.LearnMore}
+              </TikTokButton>
+            </Box>
+          </Grid>
+          <Grid item mt={isMobile ? 5 : 0} xs={12} md={6}>
+            <Grid container spacing={4}>
+              {marketingMapper.map(({ title, description, color }) => (
+                <Grid item xs={12} md={6}>
+                  <Box>
+                    <Typography variant={'h2'} py={0.5}>
+                      {title}
                     </Typography>
-                    &nbsp;
-                  </>
-                )}
-                <GradientTypography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h6" : "h4"}
-                >
-                  Redes Sociais
-                </GradientTypography>
-              </Box>
-              <Typography
-                mx={isMobile ? 2 : 0}
-                mt={3}
-                variant="body1"
-                color="secondary"
-                textAlign={isMobile ? "center" : "left"}
-              >
-                A gestão e consultoria de redes sociais é um serviço essencial
-                para empresas e indivíduos que desejam otimizar a sua presença
-                digital e alcançar os seus objetivos de marketing através das
-                plataformas sociais. Este serviço abrange uma ampla gama de
-                atividades que ajudam a construir, gerir e melhorar o desempenho
-                das redes sociais.
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Box display={isMobile ? "block" : "flex"}>
-                <Typography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h4" : "h4"}
-                >
-                  Agênciamento
-                </Typography>
-                {!isMobile && (
-                  <>
-                    &nbsp;
-                    <Typography
-                      color="secondary"
-                      textAlign={isMobile ? "center" : "left"}
-                      variant={isMobile ? "h4" : "h4"}
-                    >
-                      de
-                    </Typography>
-                    &nbsp;
-                  </>
-                )}
-                <GradientTypography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h6" : "h4"}
-                >
-                  Influencers Digitais
-                </GradientTypography>
-              </Box>
-              <Typography
-                mx={isMobile ? 2 : 0}
-                mt={3}
-                variant="body1"
-                color="secondary"
-                textAlign={isMobile ? "center" : "left"}
-              >
-                O agenciamento de influencers é um serviço especializado que
-                visa gerir e representar influenciadores digitais, ajudando-os a
-                maximizar o seu potencial e a obter oportunidades de colaboração
-                com marcas e empresas. Este serviço envolve uma série de
-                atividades que facilitam a carreira dos influenciadores,
-                permitindo-lhes focar-se na criação de conteúdo e no
-                envolvimento com o seu público.
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Box display={isMobile ? "block" : "flex"}>
-                <Typography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h4" : "h4"}
-                >
-                  Campanhas
-                </Typography>
-                {!isMobile && (
-                  <>
-                    &nbsp;
-                    <Typography
-                      color="secondary"
-                      textAlign={isMobile ? "center" : "left"}
-                      variant={isMobile ? "h4" : "h4"}
-                    >
-                      de
-                    </Typography>
-                    &nbsp;
-                  </>
-                )}
-                <GradientTypography
-                  color="secondary"
-                  textAlign={isMobile ? "center" : "left"}
-                  variant={isMobile ? "h6" : "h4"}
-                >
-                  Marketing de Influência
-                </GradientTypography>
-              </Box>
-              <Typography
-                mx={isMobile ? 2 : 0}
-                mt={3}
-                variant="body1"
-                color="secondary"
-                textAlign={isMobile ? "center" : "left"}
-              >
-                As campanhas de marketing de influência são uma estratégia de
-                marketing que envolve a colaboração com influenciadores para
-                promover produtos, serviços ou marcas. Os influenciadores são
-                indivíduos que possuem uma base de seguidores significativa e
-                engajada nas redes sociais, blogs ou outras plataformas
-                digitais, e que têm a capacidade de influenciar as opiniões e
-                comportamentos do seu público.
-                <p></p>
-                Estas campanhas funcionam ao tirar partido da credibilidade e do
-                alcance dos influenciadores para transmitir a mensagem da marca
-                de forma autêntica e convincente. Em vez de utilizar métodos
-                tradicionais de publicidade, que muitas vezes são percebidos
-                como impessoais ou intrusivos, o marketing de influência utiliza
-                a voz e a experiência dos influenciadores para criar uma conexão
-                mais genuína com os consumidores.
-              </Typography>
+                    <Typography variant={'h5'}>{description}</Typography>
+                    <LinearProgress
+                      variant={'determinate'}
+                      value={100}
+                      color={'inherit'}
+                      sx={{ color, my: 1 }}
+                    />
+                  </Box>
+                </Grid>
+              ))}
             </Grid>
           </Grid>
-        </Container>
-      </Slide>
+        </Grid>
+      </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

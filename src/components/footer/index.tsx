@@ -27,7 +27,7 @@ const Footer: FC = () => {
   const navigate = useNavigate()
   const { currentLanguage } = useLanguage()
   return (
-    <Box display="flex" bgcolor="#181818" flexDirection={'column'}>
+    <Box display="flex" bgcolor="black" flexDirection={'column'}>
       <Container maxWidth="lg">
         <Box
           py={2}

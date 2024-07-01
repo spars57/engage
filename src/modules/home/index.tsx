@@ -1,16 +1,16 @@
-import { Container } from '@mui/material'
 import Banner from '../../components/banner'
-import Companies from '../../components/companies'
 import Services from '../../components/services'
-import { isMobile } from '../../utils/is-mobile'
+import LogoCarousel from './logo-carousel.tsx'
+import WhatWeOffer from '../../components/what-we-offer-services/index.tsx'
 
 const Home = () => {
   return (
-    <Container maxWidth="xl">
+    <>
       <Banner />
-      <Companies />
-      <Services triggeringPoint={isMobile() ? 800 : 1100} />
-    </Container>
+      <LogoCarousel />
+      <Services />
+      <WhatWeOffer />
+    </>
   )
 }
 

@@ -37,4 +37,12 @@ export const PtLanguage: LanguageType = {
   TalentContactUsDescription:
     'Aceda à maior lista nacional de criadores de conteúdo, celebridades e atletas verificados, com afinidade pelo seu público-alvo.',
   SendUsAnEmail: 'Envie-nos um email',
+  Marketing: 'Marketing',
+  SocialMediaManagement: 'Gestão de Redes Sociais',
+  SocialMediaConsultancy: 'Consultoria de Redes Sociais',
+  InfluencersMarketing: 'Marketing de Influência',
+  EventsManagement: 'Gestão de Eventos',
+  DesignServices: 'Serviços de Design',
+  WebsiteDevelopment: 'Desenvolvimento de Websites',
+  OurServices: 'Os nossos serviços',
 }

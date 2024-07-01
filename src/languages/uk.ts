@@ -35,6 +35,14 @@ export const UkLanguage = {
   TalentContactUsDescription:
     "Access the nacional's largest roster of verified content creators, celebrities, and athletes with an affinity for your target audience.",
   SendUsAnEmail: 'Send us an email',
+  Marketing: 'Marketing',
+  SocialMediaManagement: 'Social Media Management',
+  SocialMediaConsultancy: 'Social Media Consultancy',
+  InfluencersMarketing: 'Influencers Marketing',
+  EventsManagement: 'Events Management',
+  DesignServices: 'Design Services',
+  WebsiteDevelopment: 'Website Development',
+  OurServices: 'Our Services',
 } as const
 
 export type LanguageType = { [K in keyof typeof UkLanguage]: string }

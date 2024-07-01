@@ -1,57 +1,50 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material'
 
 export const Theme = createTheme({
   palette: {
     secondary: {
-      main: "#FFFFFF",
-      contrastText: "000000",
-      light: "FFFFFF",
-      dark: "000000",
+      main: '#FFFFFF',
+      contrastText: '000000',
+      light: 'FFFFFF',
+      dark: '000000',
     },
     primary: {
-      main: "#FFD700",
-      contrastText: "#000000",
+      main: '#FFD700',
+      contrastText: '#000000',
     },
     common: {
-      black: "#000000",
-      white: "#FFFFFF",
+      black: '#000000',
+      white: '#FFFFFF',
     },
   },
   typography: {
     allVariants: {
       letterSpacing: 1,
-      fontFamily: "league-spartan-medium",
+      fontFamily: 'league-spartan-light',
     },
     h6: {
-      fontFamily: "league-spartan-bold",
+      fontWeight: 'bold',
     },
     h5: {
-      fontFamily: "league-spartan-bold",
+      fontWeight: 'bold',
     },
     h4: {
-      fontFamily: "league-spartan-bold",
+      fontWeight: 'bold',
     },
     h3: {
-      fontFamily: "league-spartan-bold",
+      fontWeight: 'bold',
     },
     h2: {
-      fontFamily: "league-spartan-bold",
+      fontWeight: 'bold',
     },
     h1: {
-      fontFamily: "league-spartan-bold",
-    },
-
-    body1: {
-      fontFamily: "league-spartan-medium",
-    },
-    body2: {
-      fontFamily: "league-spartan-medium",
+      fontWeight: 'bold',
     },
     subtitle1: {
       fontSize: 20,
     },
     button: {
-      fontFamily: "league-spartan-bold",
+      fontFamily: 'league-spartan-medium',
     },
   },
-});
+})
